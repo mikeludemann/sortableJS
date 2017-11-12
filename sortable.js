@@ -86,11 +86,11 @@ var sortable = (function(){
 
                     if(ascending){
 
-                        return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? 1 :- 1;
+                        return (ascending == ($(a).find(sortingElement).html() < $(b).find(sortingElement).html())) ? 1 :- 1;
                     
                     } else {
 
-                        return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? -1 : 1;
+                        return (ascending == ($(a).find(sortingElement).html() < $(b).find(sortingElement).html())) ? -1 : 1;
                     
                     }
 
