@@ -1,27 +1,39 @@
 var sortable = (function(){
 
-	var sortASC = function(mainElement, subElement, sortingElement, clickElement){
-  	
+    var sortASC = function(mainElement, subElement, sortingElement, clickElement){
+
         $(clickElement).click(function () {
+
             var ascElements = $(subElement).sort(function (a, b) {
+
                 return $(a).find(sortingElement).text() > $(b).find(sortingElement).text();
+
             });
+
             $(mainElement).html(ascElements);
+
         });
-  
+
     }
   
     var sortDESC = function(mainElement, subElement, sortingElement, clickElement){
-        
+
         $(clickElement).click(function (e) {
-                e = e || event;
+
+            e = e || event;
+
             e.preventDefault();
+
             var descElements = $(subElement).sort(function (a, b) {
+
                 return $(a).find(sortingElement).text() < $(b).find(sortingElement).text();
+
             });
+
             $(mainElement).html(descElements);
+
         });
-    
+
     }
 
     var convertStringToNumber = function(value){
@@ -58,7 +70,7 @@ var sortable = (function(){
 
             var sortingElements = elements.sort(function (a, b) {
 
-            if(/\d/.test($(a).find(sortingElement).html())){
+            if(/\d/.test($(a).find(sortingElement).html()) && /\d/.test($(b).find(sortingElement).html())){
 
                 return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? 1 : -1;
 
@@ -78,12 +90,12 @@ var sortable = (function(){
     
     }
   
-  return {
-  	
-    sortASC: sortASC,
-    sortDESC: sortDESC,
-    sortToggle: sortToggle
-  
-  }
+    return {
+
+        sortASC: sortASC,
+        sortDESC: sortDESC,
+        sortToggle: sortToggle
+
+    }
 
 })();
