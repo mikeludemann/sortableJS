@@ -4,7 +4,6 @@ Sortable elements in ASC and DESC format.
 Toggle function with ASC and DESC.
 
 ```code
-
 sortable.sortASC(mainElement, subElement, sortingElement, clickElement);
 
 With testing parameter
