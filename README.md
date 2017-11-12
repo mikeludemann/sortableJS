@@ -3,6 +3,8 @@
 Sortable elements in ASC and DESC format. 
 Toggle function with ASC and DESC.
 
+# Example
+
 ```code
 sortable.sortASC(mainElement, subElement, sortingElement, clickElement);
 
