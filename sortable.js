@@ -70,17 +70,33 @@ var sortable = (function(){
 
             var sortingElements = elements.sort(function (a, b) {
 
-            if(/\d/.test($(a).find(sortingElement).html()) && /\d/.test($(b).find(sortingElement).html())){
+                if(/\d/.test($(a).find(sortingElement).html()) && /\d/.test($(b).find(sortingElement).html())){
+                    
+                    if(ascending){
 
-                return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? 1 : -1;
+                        return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? -1 : 1;
+                    
+                    } else {
+                        
+                        return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? 1 : -1;
+                    
+                    }
 
-            } else {
+                } else {
 
-                return (ascending == ($(a).find(sortingElement).html() < $(b).find(sortingElement).html())) ? 1 : -1;
+                    if(ascending){
 
-            }
+                        return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? 1 :- 1;
+                    
+                    } else {
 
-            });
+                        return (ascending == (convertStringToNumber($(a).find(sortingElement).html()) < convertStringToNumber($(b).find(sortingElement).html()))) ? -1 : 1;
+                    
+                    }
+
+                }
+
+                });
 
             ascending = ascending ? false : true;
 
